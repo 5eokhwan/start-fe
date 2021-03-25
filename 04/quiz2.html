@@ -15,6 +15,12 @@
         height: 300px;
         border: 1px solid gray;
       }
+      .black {
+        background-color: black;
+      }
+      .white {
+        background-color: white;
+      }
     </style>
   </head>
   <body>
@@ -26,20 +32,21 @@
         for (var j = 0; j < 4; j++) {
           let spaceSpan = document.createElement("div");
           if ((j % 2 === 0 && i % 2 === 0) || (j % 2 === 1 && i % 2 === 1)) {
-            spaceSpan.class = "black";
-            spaceSpan.style.backgroundColor = "black";
+            spaceSpan.className = "black";
           } else {
-            spaceSpan.class = "white";
-            spaceSpan.style.backgroundColor = "white";
+            spaceSpan.className = "white";
           }
           spaceSpan.addEventListener("click", function (event) {
-            if (!spaceSpan.isRed) {
-              spaceSpan.isRed = true;
-              spaceSpan.style.backgroundColor = "red";
-            } else {
-              spaceSpan.isRed = false;
-              spaceSpan.style.backgroundColor = spaceSpan.class;
+            let bl = document.querySelectorAll(".black");
+            console.log(bl);
+            for (let i = 0; i < bl.length; i++) {
+              bl[i].style.backgroundColor = "black";
             }
+            let wt = document.querySelectorAll(".white");
+            for (let i = 0; i < wt.length; i++) {
+              wt[i].style.backgroundColor = "white";
+            }
+            spaceSpan.style.backgroundColor = "red";
           });
           board.appendChild(spaceSpan);
         }
