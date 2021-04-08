@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>DOM</title>
+    <style>
+      body {
+        padding: 10px;
+      }
+      .box {
+        width: 100px;
+        height: 30px;
+        background-color: #ddd;
+        visibility: visible;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="txt" value="hello" />
+      <button class="text-btn">TEXT 넣기</button>
+      <br />
+      <button class="add-red">빨간색으로</button>
+      <button class="add-btn">추가</button>
+      <button class="delete-btn">삭제</button>
+      <button class="reset-btn">초기화</button>
+      <button class="toggle-btn">보이기,숨기기 토글</button>
+      <button class="image-btn">이미지</button>
+    </div>
+
+    <div class="box" style="visibility: visible"></div>
+
+    <script>
+      const $textBtn = document.querySelector(".text-btn");
+      const $addRedBtn = document.querySelector(".add-red");
+      const $addBtn = document.querySelector(".add-btn");
+      const $deleteBtn = document.querySelector(".delete-btn");
+      const $resetBtn = document.querySelector(".reset-btn");
+      const $toggleBtn = document.querySelector(".toggle-btn");
+      const $imageBtn = document.querySelector(".image-btn");
+
+      function insertTxt() {
+        const boxes =
+          document.querySelector(".box") && document.querySelectorAll(".box");
+        const txt = document.querySelector(".txt");
+        if (boxes) {
+          boxes[boxes.length - 1].innerHTML = txt.value;
+        }
+      }
+
+      $textBtn.addEventListener("click", insertTxt);
+
+      function makeRed() {
+        const boxes = document.querySelectorAll(".box");
+        boxes.forEach((le) => {
+          le.classList.add("red");
+        });
+      }
+
+      $addRedBtn.addEventListener("click", makeRed);
+
+      function makeBox() {
+        const div = document.createElement("div");
+        div.classList.add("box");
+        document.body.appendChild(div);
+        return div;
+      }
+
+      $addBtn.addEventListener("click", makeBox);
+
+      $deleteBtn.addEventListener("click", () => {
+        const boxes =
+          document.querySelector(".box") && document.querySelectorAll(".box");
+        if (boxes) {
+          boxes[boxes.length - 1].remove();
+        }
+      });
+
+      function removeAll() {
+        const boxes = document.querySelectorAll(".box");
+        boxes.forEach((le) => {
+          le.remove();
+        });
+      }
+
+      $resetBtn.addEventListener("click", removeAll);
+
+      function toggleBox() {
+        const boxes =
+          document.querySelector(".box") && document.querySelectorAll(".box");
+        if (boxes) {
+          if (boxes[0].style.visibility === "visible") {
+            boxes.forEach((le) => {
+              le.style.visibility = "hidden";
+            });
+          } else {
+            boxes.forEach((le) => {
+              le.style.visibility = "visible";
+            });
+          }
+        }
+      }
+
+      $toggleBtn.addEventListener("click", toggleBox);
+
+      function insertImg() {
+        let boxes =
+          document.querySelector(".box") && document.querySelectorAll(".box");
+        const img = `<img src="https://i.imgur.com/69NjYBH.png" alt="">`;
+        if (!boxes) {
+          boxes = [];
+          boxes.push(makeBox());
+        }
+        boxes[boxes.length - 1].innerHTML = img;
+      }
+      $imageBtn.addEventListener("click", insertImg);
+    </script>
+  </body>
+</html>
