@@ -10,12 +10,12 @@ setInterval(() => {
   bug.style.top = rand(y1, y2) + "px";
 }, 1000);
 
-bug.addEventListener("click", (e) => {
+bug.addEventListener("click", e => {
   point.innerHTML = parseInt(point.innerHTML) + 1;
   e.stopPropagation();
 });
 
-box.addEventListener("click", (e) => {
+box.addEventListener("click", e => {
   life.innerHTML = life.innerHTML - 1;
   if (life.innerHTML <= 0) alert("game over");
 });

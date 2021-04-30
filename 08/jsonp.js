@@ -1,0 +1,3 @@
+callback({
+  a: "test output"
+});
