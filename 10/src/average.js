@@ -13,9 +13,7 @@ export function avg() {
   len = arr.length;
   for (let i = 0; i < len; i++) {
     if (arr[i] === undefined) break;
-    if (typeof arr[i] === "string") {
-      arr.splice(i--, 1);
-    }
+    if (typeof arr[i] === "string") arr.splice(i--, 1);
   }
   len = arr.length;
   return arr.reduce((acc, cur) => acc + cur, 0) / len;
