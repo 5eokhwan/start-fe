@@ -55,7 +55,7 @@
 
       function select(e) {
         if ($select) {
-            
+          $select.className = $select.className.replace(" select", "");
         }
         console.log("select");
         var el = e.currentTarget;

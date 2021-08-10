@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0"
+    />
+    <link rel="stylesheet" type="text/css" href="./examination.css" />
+    <style>
+      body {
+        margin: 0;
+        background: url(images/bg.gif);
+      }
+      .container {
+        display: flex;
+        flex-flow: row wrap;
+        width: 1390px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 95%;
+      }
+      .container div {
+        box-sizing: border-box;
+      }
+      .header {
+        width: 190px;
+        background: url(images/bg_header.gif);
+        border-left: 1px solid #4d5669;
+        border-right: 1px solid #4d5669;
+      }
+      .header .logo {
+        display: block;
+        margin: 30px auto 0;
+        width: 131px;
+        height: 50px;
+      }
+      .header .logo_title {
+        text-align: center;
+        margin: 10px 0 0 0;
+        font-size: 19px;
+        color: #d6d8dc;
+      }
+      .content_box {
+        width: 300px;
+        box-shadow: inset -5px 0 5px #282d36;
+        padding: 35px 25px;
+      }
+
+      .content_box .title {
+        line-height: 1.25em;
+        font-size: 2em;
+        color: #d6d8dc;
+        margin-bottom: 12px;
+      }
+      .content_box .sub_title {
+        line-height: 1.5em;
+        color: #febe1e;
+        margin-bottom: 40px;
+      }
+      .content_box .sub_title {
+        line-height: 1.5em;
+        color: #febe1e;
+      }
+      .content_box .content_text {
+        height: 150px;
+        color: #a7a7a7;
+      }
+      .etc {
+        margin-bottom: 7px;
+        color: white;
+      }
+      .new_note {
+        font-weight: bold;
+        font-size: 1em;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #868c98;
+        color: white;
+      }
+      #screenShot {
+        width: 250px;
+        height: 141px;
+        border: 3px solid #5c6475;
+      }
+      figure {
+        width: 250px;
+        height: 141px;
+        margin: 0 auto 30px auto;
+        position: relative;
+      }
+      figcaption {
+        padding: 5px;
+        box-sizing: border-box;
+        height: 30px;
+        opacity: 0.5;
+        background-color: #000;
+        color: #c5c5c5;
+        font-size: 12px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: -6px;
+        bottom: -6px;
+      }
+      .download_link {
+        border-top: 1px solid #868c98;
+        border-bottom: 1px solid #868c98;
+        text-align: center;
+        padding: 12px 0 12px 0;
+      }
+      footer {
+        height: 50px;
+        background-color: #282d36;
+        border-top: 1px solid #3e424a;
+        text-align: center;
+      }
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 600px) {
+        .header {
+          display: flex;
+          align-items: center;
+          height: 60px;
+          width: 100%;
+          background: none;
+          background-color: #282d36;
+        }
+        .header .logo_title {
+          margin: 5px 0 10px 0;
+        }
+        .container {
+          height: auto;
+          width: auto;
+          min-width: 150px;
+          max-width: 600px;
+        }
+        .content_box {
+          width: 100%;
+          box-shadow: inset 0 -5px 5px #282d36;
+          padding: 35px 25px;
+          background: url(images/bg.gif);
+        }
+        .content_box .content_text {
+          height: auto;
+          color: #a7a7a7;
+        }
+        .cropping {
+          max-width: 40px;
+          overflow: hidden;
+          display: inline-block;
+          margin: 5px 10px;
+        }
+        .header .logo {
+          margin: 0;
+          max-width: initial;
+        }
+        .etc {
+          display: none;
+        }
+        .header p {
+          display: inline;
+          font-size: 19px;
+          color: #d6d8dc;
+          margin: 0 0 20px 0;
+          height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="cropping">
+          <img class="logo" src="images/logo.png" />
+        </div>
+        <div class="logo_title">기초웹개발론</div>
+      </div>
+      <div class="content_box">
+        <p class="title">HTML</p>
+        <p class="sub_title">Hyper Text Markup Language</p>
+        <div class="content_text_box">
+          <p class="content_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis consectetur distinctio eum aspernatur ipsam? Magni illo
+            non itaque quisquam, possimus tempora optio vitae, eos voluptates
+            autem sint ipsa quaerat dicta.
+          </p>
+        </div>
+        <p class="etc">HTML Convention</p>
+        <p class="etc">HTML5 Element</p>
+        <p class="etc">Responsible Web</p>
+      </div>
+      <div class="content_box">
+        <p class="title">CSS</p>
+        <p class="sub_title">Cascading Style Sheets</p>
+        <div class="content_text_box">
+          <p class="content_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis consectetur distinctio eum aspernatur ipsam? Magni illo
+            non itaque quisquam, possimus tempora optio vitae, eos voluptates
+            autem sint ipsa quaerat dicta.
+          </p>
+          <p class="etc">CSS Convention</p>
+          <p class="etc">CSS Element</p>
+          <p class="etc">CSS Web</p>
+          <p class="etc">CSS Ani</p>
+        </div>
+      </div>
+      <div class="content_box">
+        <p class="title">JS</p>
+        <p class="sub_title">Javascript</p>
+        <div class="content_text_box">
+          <p class="content_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis consectetur distinctio eum aspernatur ipsam? Magni illo
+            non itaque quisquam, possimus tempora optio vitae, eos voluptates
+            autem sint ipsa quaerat dicta.
+          </p>
+        </div>
+        <p class="new_note etc">새로운 소식</p>
+        <p class="etc">React V16.8.6 released 2018.05.23</p>
+        <p class="etc">React V16.8.6 released 2018.05.23</p>
+        <p class="etc">React V16.8.6 released 2018.05.23</p>
+      </div>
+      <div class="content_box">
+        <p class="title">Tools</p>
+        <p class="sub_title">개발을 위한 툴</p>
+        <figure>
+          <img id="screenShot" src="images/vscode.png" />
+          <figcaption>스크린샷</figcaption>
+        </figure>
+        <div class="download_link">VS Code Download</div>
+      </div>
+    </div>
+    <footer>copyright</footer>
+  </body>
+</html>

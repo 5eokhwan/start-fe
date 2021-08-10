@@ -29,7 +29,6 @@
     <script>
       const boxes = document.querySelectorAll(".box");
       const offset = { x: 0, y: 0 };
-      let currentBox;
       let isDown = false;
 
       function down(e) {
@@ -48,7 +47,7 @@
         e.path[0].style.top = e.clientY - offset.y + "px";
       }
 
-      boxes.forEach(($box) => {
+      boxes.forEach($box => {
         $box.addEventListener("mousedown", down);
         $box.addEventListener("mouseup", up);
         $box.addEventListener("mousemove", move);
